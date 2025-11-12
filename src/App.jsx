@@ -26,6 +26,8 @@ function App() {
 
   const handleDelete = (id) => {
     setData(data.filter((_, index) => index !== id));
+    setTopic('')
+    setNotes('')
   };
 
   const handleEdit = (id) => {
