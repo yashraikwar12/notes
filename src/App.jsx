@@ -26,15 +26,17 @@ function App() {
 
   const handleDelete = (id) => {
     setData(data.filter((_, index) => index !== id));
-    setTopic('')
-    setNotes('')
+    setTopic("");
+    setNotes("");
   };
 
-  const handleEdit = (id) => {
-    const { topic, notes } = data[id];
+  const handleEdit = (val, index) => {
+    console.log(val, index);
+
+    const { topic, notes } = val;
     setTopic(topic);
     setNotes(notes);
-    setEditIndex(id);
+    setEditIndex(index);
   };
 
   return (
@@ -93,7 +95,7 @@ function App() {
 
               <div className="absolute top-4 right-4 flex flex-col gap-2">
                 <button
-                  onClick={() => handleEdit(index)}
+                  onClick={() => handleEdit(val, index)}
                   className="bg-gray-800 px-4 py-1 rounded text-sm active:scale-95"
                 >
                   Edit
