@@ -28,6 +28,7 @@ function App() {
     setData(data.filter((_, index) => index !== id));
     setTopic("");
     setNotes("");
+    setEditIndex(null);
   };
 
   const handleEdit = (val, index) => {
